@@ -1,0 +1,69 @@
+Travel Planner AI – How to Run
+
+This project helps you plan days travel itinerary using AI — completely offline!
+
+---
+
+STEP 1 — Install Python
+
+Make sure Python is installed on your computer. 
+Recommended: Python 3.11
+
+You can download it from: https://www.python.org/downloads/
+
+---
+
+STEP 2 — Install Required Libraries
+
+Open a terminal inside the project folder and run:
+
+    pip install -r requirements.txt
+    pip install sentencepiece==0.1.99
+
+---
+
+STEP 3 — Run the Travel Planner
+
+You have two ways to use the app:
+
+---
+
+OPTION A — Run in Terminal (Simple Mode)
+
+Run this:
+
+    python main.py
+
+It will ask:
+> Describe your ideal vacation:
+You can type something like:
+> plan a 3-day trip to Udaipur under ₹10,000
+
+---
+
+OPTION B — Run the Web App (Streamlit)
+
+Run this:
+
+    streamlit run app.py
+
+Then open your browser and go to:
+> http://localhost:8501
+
+Type your travel request and it will generate an itinerary.
+
+---
+
+📁 Files You Should See
+
+- main.py — runs in terminal
+- app.py — Streamlit web version
+- destination_utils.py — handles destination data
+- planner_agent.py — AI brain using LangGraph
+- destinations.csv — list of travel places
+- vectorstore.pkl — generated automatically
+
+---
+final:
+
+You can now use your own queries to generate custom 3-day travel plans!
