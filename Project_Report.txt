@@ -1,0 +1,67 @@
+
+Travel Planner AI Agent — LangGraph Submission
+
+Overview :
+
+This project is a simple AI-based travel planner that runs entirely offline. You just type in your travel request (like “Plan a 3-day trip to Udaipur”) and it generates a full itinerary using a local AI model.
+
+It uses:
+- LangGraph to manage the flow
+- FAISS for vector search
+- HuggingFace's `flan-t5-small` model for generating the travel plan
+
+Everything runs locally — no internet or API keys needed.
+
+---
+
+How It Works:
+
+Step 1: Search Destinations
+The app takes your input and finds the most relevant destinations using semantic search (FAISS).
+
+Step 2: Generate Itinerary
+It then passes the result to a local language model which generates a 3-day travel plan.
+
+---
+
+Tools Used:
+
+- LangGraph: to manage the AI workflow
+- FAISS: to find similar destinations based on user query
+- flan-t5-small: a lightweight language model that runs on CPU
+- Streamlit: for an easy-to-use web interface
+- HuggingFace Transformers: for embedding and text generation
+
+---
+
+Data and RAG Logic:
+
+- The app loads a list of destinations from `destinations.csv`
+- It embeds their descriptions using a sentence-transformer model
+- On user input, the app retrieves top 5 matches
+- Then it generates a 3-day plan based on the results
+
+If no matches are found, it still generates a generic itinerary.
+
+---
+
+How to Run:
+
+There are two options:
+
+Option A (Terminal):
+Run `python main.py` and enter your travel request.
+
+Option B (Web App):
+Run `streamlit run app.py` to use the web interface.
+
+All setup steps are explained in the file `RUN_INSTRUCTIONS.txt`.
+
+---
+
+   Final Notes:
+
+- This project works fully offline
+- Runs on any modern PC
+- No external API or paid services required
+- The code is clean, commented, and easy to follow
